@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d18">
+
+<title>لوحة الإدارة | KORA LIVE 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+
+<div class="admin-shell">
+
+<aside class="sidebar">
+
+<a class="brand" href="index.html">
+<span class="brand-mark">K<span>•</span></span>
+<span>KORA <b>LIVE 1</b><small>لوحة التحكم</small></span>
+</a>
+
+<div class="side-label">الإدارة</div>
+
+<a class="side-link active" href="#matchForm">
+＋ نشر مباراة
+</a>
+
+<a class="side-link" href="#manageMatches">
+⚽ المباريات
+</a>
+
+<a class="side-link" href="#newsForm">
+▤ نشر خبر
+</a>
+
+<a class="side-link" href="index.html">
+↗ عرض التطبيق
+</a>
+
+<button class="side-link" id="adminLogout">
+⇥ تسجيل الخروج
+</button>
+
+</aside>
+
+<main class="admin-main">
+
+<header class="admin-top">
+
+<div>
+<span class="eyebrow">مساحة الإدارة</span>
+<h1>لوحة التحكم</h1>
+</div>
+
+<span class="admin-user" id="adminEmail">
+التحقق من الصلاحيات...
+</span>
+
+</header>
+
+<div id="adminNotice" class="notice"></div>
+
+<section class="stats-row">
+
+<article class="stat-card">
+<span>إجمالي المباريات</span>
+<b id="totalMatches">—</b>
+</article>
+
+<article class="stat-card">
+<span>مباريات مباشرة</span>
+<b id="liveMatches">—</b>
+</article>
+
+<article class="stat-card">
+<span>الأخبار المنشورة</span>
+<b id="totalNews">—</b>
+</article>
+
+</section>
+
+<!-- نشر مباراة -->
+
+<section class="admin-card" id="matchForm">
+
+<div class="section-head">
+<div>
+<span class="eyebrow">إدارة البث والنتائج</span>
+<h2>نشر مباراة جديدة</h2>
+</div>
+</div>
+
+<form id="createMatchForm" class="form-grid">
+
+<label>
+اسم البطولة
+<input id="competition" required placeholder="دوري أبطال أوروبا">
+</label>
+
+<label>
+الفريق صاحب الأرض
+<input id="homeTeam" required placeholder="الأهلي">
+</label>
+
+<label>
+الفريق الضيف
+<input id="awayTeam" required placeholder="الزمالك">
+</label>
+
+<label>
+موعد المباراة
+<input id="matchDate" type="datetime-local" required>
+</label>
+
+<label>
+حالة المباراة
+<select id="matchStatus">
+<option value="upcoming">قادمة</option>
+<option value="live">مباشر</option>
+<option value="finished">انتهت</option>
+</select>
+</label>
+
+<label>
+نتيجة صاحب الأرض
+<input id="homeScore" type="number" min="0" value="0">
+</label>
+
+<label>
+نتيجة الفريق الضيف
+<input id="awayScore" type="number" min="0" value="0">
+</label>
+
+<label class="wide">
+رابط شعار الفريق الأول
+<input id="homeLogo" type="url" placeholder="https://...">
+</label>
+
+<label class="wide">
+رابط شعار الفريق الثاني
+<input id="awayLogo" type="url" placeholder="https://...">
+</label>
+
+<div class="wide stream-editor">
+
+<h3>روابط البث</h3>
+
+<p class="muted">
+أضف رابطاً أو أكثر واختر نوع الرابط.
+</p>
+
+<div id="streamRows">
+
+<div class="stream-row">
+
+<select class="streamType">
+<option value="hls">HLS / M3U8</option>
+<option value="mp4">MP4</option>
+<option value="embed">Embed</option>
+</select>
+
+<input class="streamUrl" type="url"
+placeholder="https://example.com/live.m3u8">
+
+<input class="streamName"
+placeholder="السيرفر الأساسي">
+
+</div>
+
+</div>
+
+<button type="button" class="btn ghost" id="addStream">
+＋ إضافة سيرفر آخر
+</button>
+
+</div>
+
+<label class="wide">
+ملاحظات للمستخدم
+<textarea id="matchNote" rows="2"></textarea>
+</label>
+
+<div class="wide">
+<button class="btn primary" type="submit">
+نشر المباراة
+</button>
+</div>
+
+</form>
+
+</section>
+
+<!-- إدارة المباريات -->
+
+<section class="admin-card" id="manageMatches">
+
+<div class="section-head">
+<div>
+<span class="eyebrow">المحتوى المنشور</span>
+<h2>إدارة المباريات</h2>
+</div>
+</div>
+
+<div id="adminMatches" class="admin-list">
+جارٍ التحميل...
+</div>
+
+</section>
+
+<!-- نشر الأخبار -->
+
+<section class="admin-card" id="newsForm">
+
+<div class="section-head">
+<div>
+<span class="eyebrow">مركز الأخبار</span>
+<h2>نشر خبر</h2>
+</div>
+</div>
+
+<form id="createNewsForm" class="form-grid">
+
+<label class="wide">
+عنوان الخبر
+<input id="newsTitle" required maxlength="120">
+</label>
+
+<label class="wide">
+محتوى الخبر
+<textarea id="newsBody" rows="4" required></textarea>
+</label>
+
+<label class="wide">
+رابط صورة
+<input id="newsImage" type="url">
+</label>
+
+<div class="wide">
+<button class="btn primary">
+نشر الخبر
+</button>
+</div>
+
+</form>
+
+</section>
+
+</main>
+</div>
+
+<script type="module" src="js/admin.js"></script>
+
+</body>
+</html>
