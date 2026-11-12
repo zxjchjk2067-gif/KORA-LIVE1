@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d18">
+<title>دخول | KORA LIVE 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="auth-page">
+
+<a class="back-link" href="index.html">→ العودة للمباريات</a>
+
+<main class="auth-wrap">
+
+<div class="auth-brand">
+<span class="brand-mark">K<span>•</span></span>
+<div>
+<b>KORA LIVE 1</b>
+<small>مكانك الأول لعالم كرة القدم</small>
+</div>
+</div>
+
+<section class="auth-card">
+
+<span class="eyebrow">مرحباً بعودتك</span>
+
+<h1 id="formHeading">سجّل دخولك</h1>
+
+<p class="muted">
+ادخل إلى عالم المباريات المفضلة لديك.
+</p>
+
+<form id="authForm">
+
+<label>
+البريد الإلكتروني
+<input
+type="email"
+id="email"
+placeholder="name@example.com"
+autocomplete="email"
+required>
+</label>
+
+<label>
+كلمة المرور
+<input
+type="password"
+id="password"
+placeholder="••••••••"
+minlength="6"
+autocomplete="current-password"
+required>
+</label>
+
+<button class="btn primary full" id="submitBtn">
+تسجيل الدخول
+</button>
+
+</form>
+
+<button class="text-btn" id="forgotBtn">
+نسيت كلمة المرور؟
+</button>
+
+<div class="or">
+<span>أو تابع باستخدام</span>
+</div>
+
+<button class="btn google full" id="googleBtn">
+<b>G</b> المتابعة باستخدام Google
+</button>
+
+<p class="switch-auth" id="switchText">
+ليس لديك حساب؟
+<button class="text-btn" id="switchBtn">
+أنشئ حساباً
+</button>
+</p>
+
+<div class="notice" id="authMessage"></div>
+
+</section>
+
+<p class="auth-foot">
+بتسجيل الدخول، أنت توافق على شروط الاستخدام وسياسة الخصوصية.
+</p>
+
+</main>
+
+<script type="module" src="js/auth.js"></script>
+
+</body>
+</html>
