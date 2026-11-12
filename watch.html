@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="theme-color" content="#090d18">
+
+<title>مشاهدة المباراة | KORA LIVE 1</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+
+</head>
+
+<body>
+
+<div class="watch-shell">
+
+<header class="topbar">
+
+<a class="brand" href="index.html">
+
+<span class="brand-mark">K<span>•</span></span>
+
+<span>KORA <b>LIVE 1</b><small>مشاهدة المباراة</small></span>
+
+</a>
+
+<a class="btn ghost" href="index.html">
+كل المباريات
+</a>
+
+</header>
+
+<main>
+
+<div id="matchHeading" class="watch-heading">
+
+<div class="loading">
+جارٍ تحميل المباراة...
+</div>
+
+</div>
+
+<section class="player-card">
+
+<div class="player-top">
+
+<span class="live-label">
+<i class="pulse"></i>
+بث المباراة
+</span>
+
+<span id="serverLabel">
+اختر سيرفر البث
+</span>
+
+</div>
+
+<div class="video-stage" id="videoStage">
+
+<div class="player-placeholder">
+
+⚽
+
+<b>اختر سيرفر لبدء المشاهدة</b>
+
+<small>سيظهر البث هنا داخل التطبيق</small>
+
+</div>
+
+</div>
+
+<div id="serverList" class="server-list"></div>
+
+<div id="playerMessage" class="notice"></div>
+
+</section>
+
+<div id="matchDetails" class="admin-card"></div>
+
+</main>
+
+</div>
+
+<script type="module" src="js/watch.js"></script>
+
+</body>
+</html>
